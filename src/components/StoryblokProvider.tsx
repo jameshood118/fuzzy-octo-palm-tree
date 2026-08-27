@@ -4,15 +4,15 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import { ReactNode } from "react";
 
 // 1. Import your strict WCAG 2.2 AA primitives wrapped for Storyblok
-import Page from "@/app/page";
-import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
+import Page from "./blocks/Page";
+import SbButton from "./blocks/SbButton";
+import SbInput from "./blocks/SbInput";
 
 // 2. The Component Registry: Maps the CMS block string to the React function
 const components = {
   page: Page,
-  button: Button,
-  input: Input,
+  button: SbButton,
+  input: SbInput,
 };
 
 // 3. Initialize the bridge. 

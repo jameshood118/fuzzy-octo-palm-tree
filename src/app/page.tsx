@@ -11,7 +11,7 @@ async function fetchHomeStory(): Promise<ISbStoryData | null> {
     // 2. Fetch the root "home" story, pivoting based on environment
     const { data } = await storyblokApi.get("cdn/stories/home", {
       version: process.env.NODE_ENV === "development" ? "draft" : "published",
-      resolve_relations: "", // Add relation fields here later if needed
+      resolve_relations: "", 
     });
     
     return data.story;
@@ -32,14 +32,13 @@ export default async function Home() {
           CMS Connection Pending
         </h1>
         <p className="mt-4 max-w-md text-[var(--foreground)]">
-          The Storyblok bridge for <strong>fuzzy-octo-palm-tree</strong> is inactive. Verify your environment variables and Space ID.
+          The headless content bridge is currently inactive. Please configure your environment variables to initialize the data source.
         </p>
       </div>
     );
   }
 
-  // 4. layout.tsx already provides the <main id="main-content"> wrapper. 
-  // We strictly pass the validated story payload into the Storyblok provider.
+  // 4. layout.tsx provides the <main> wrapper. 
   return (
     <section aria-label="Home Page Content" className="w-full">
       <StoryblokStory story={story} />
