@@ -6,6 +6,7 @@ import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import prettierConfig from "eslint-config-prettier";
+import globals from "globals"; // 1. Inject the globals package
 
 export default tseslint.config(
   // 1. GLOBAL IGNORES (Environment Optimization)
