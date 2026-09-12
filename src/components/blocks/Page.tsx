@@ -10,7 +10,7 @@ interface PageProps {
   blok: PageBlok;
 }
 
-export default function Page({ blok }: PageProps) {
+const Page = ({ blok }: PageProps) => {
   // If the body array is empty or undefined, prevent mapping errors safely
   if (!blok?.body || blok.body.length === 0) {
     return <main {...storyblokEditable(blok)} className="min-h-screen w-full" />;
@@ -23,4 +23,6 @@ export default function Page({ blok }: PageProps) {
       ))}
     </main>
   );
-}
+};
+
+export default Page;

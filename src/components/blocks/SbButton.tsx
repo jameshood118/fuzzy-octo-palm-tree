@@ -1,11 +1,11 @@
-import { storyblokEditable } from "@storyblok/react/rsc";
-import type { SbBlokData } from "@storyblok/react/rsc";
-import { Button } from "@/components/ui/Button";
+import { storyblokEditable } from '@storyblok/react/rsc';
+import type { SbBlokData } from '@storyblok/react/rsc';
+import { Button } from '@/components/ui/Button';
 
 export interface SbButtonBlok extends SbBlokData {
-  component: "button";
+  component: 'button';
   label: string;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: 'primary' | 'secondary' | 'outline';
   disabled?: boolean;
 }
 
@@ -13,14 +13,16 @@ interface SbButtonProps {
   blok: SbButtonBlok;
 }
 
-export default function SbButton({ blok }: SbButtonProps) {
+const SbButton = ({ blok }: SbButtonProps) => {
   return (
-    <Button 
-      {...storyblokEditable(blok)} 
-      variant={blok.variant || "primary"}
+    <Button
+      {...storyblokEditable(blok)}
+      variant={blok.variant || 'primary'}
       disabled={blok.disabled}
     >
       {blok.label}
     </Button>
   );
-}
+};
+
+export default SbButton;
