@@ -25,7 +25,7 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
 
-  // 3. NEXT.JS, REACT & STORYBLOK CONFIGURATION
+// 3. NEXT.JS, REACT & STORYBLOK CONFIGURATION
   {
     files: ["**/*.{ts,tsx}"],
     plugins: {
@@ -38,8 +38,8 @@ export default tseslint.config(
       parser: tseslint.parser,
       ecmaVersion: 2020,
       globals: {
-        ...js.environments.browser,
-        ...js.environments.node,
+        ...globals.browser, // 2. Hardwire the browser globals
+        ...globals.node,    // 3. Hardwire the node globals
       },
       parserOptions: {
         ecmaFeatures: { jsx: true },
